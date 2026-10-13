@@ -1,0 +1,18 @@
+{"persona_id": "alex", "row_id": "alex-001", "memory": "Alex prefers espresso over drip coffee and drinks it before 10am."}
+{"persona_id": "alex", "row_id": "alex-002", "memory": "Alex trains for marathons and runs long distances every Tuesday morning."}
+{"persona_id": "alex", "row_id": "alex-003", "memory": "Alex uses Neovim with a dark theme and disables line numbers in presentation mode."}
+{"persona_id": "blake", "row_id": "blake-001", "memory": "Blake is allergic to shellfish and always checks menus when traveling."}
+{"persona_id": "blake", "row_id": "blake-002", "memory": "Blake plays jazz piano and practices scales in the evening."}
+{"persona_id": "blake", "row_id": "blake-003", "memory": "Blake prefers aisle seats on flights for easier boarding."}
+{"persona_id": "casey", "row_id": "casey-001", "memory": "Casey maintains a homelab with Proxmox and documents every VLAN change."}
+{"persona_id": "casey", "row_id": "casey-002", "memory": "Casey drinks oat milk lattes and avoids dairy when possible."}
+{"persona_id": "casey", "row_id": "casey-003", "memory": "Casey reads science fiction before bed, especially space opera."}
+{"type": "query", "persona_id": "alex", "query": "What coffee does Alex like in the morning?", "relevant_row_ids": ["alex-001"]}
+{"type": "query", "persona_id": "alex", "query": "When does Alex go running?", "relevant_row_ids": ["alex-002"]}
+{"type": "query", "persona_id": "alex", "query": "Which editor and theme does Alex use?", "relevant_row_ids": ["alex-003"]}
+{"type": "query", "persona_id": "blake", "query": "Any food allergies Blake has?", "relevant_row_ids": ["blake-001"]}
+{"type": "query", "persona_id": "blake", "query": "What instrument does Blake practice?", "relevant_row_ids": ["blake-002"]}
+{"type": "query", "persona_id": "blake", "query": "Where does Blake like to sit on airplanes?", "relevant_row_ids": ["blake-003"]}
+{"type": "query", "persona_id": "casey", "query": "What virtualization stack does Casey run at home?", "relevant_row_ids": ["casey-001"]}
+{"type": "query", "persona_id": "casey", "query": "What milk does Casey prefer in coffee?", "relevant_row_ids": ["casey-002"]}
+{"type": "query", "persona_id": "casey", "query": "What genre does Casey read at night?", "relevant_row_ids": ["casey-003"]}

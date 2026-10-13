@@ -1,0 +1,38 @@
+{
+  "harness_label": "skilleddragon-lab-harness",
+  "generated_at": "2026-10-13T02:01:00.435695+00:00",
+  "mem0ai_version": "2.2.1",
+  "fixture": "src/memory_bakeoff/fixtures/persona_corpus.jsonl",
+  "memories_ingested": 9,
+  "queries_evaluated": 9,
+  "top_k": 5,
+  "latency": {
+    "add_ms": {
+      "p50": 6.270758000027854,
+      "p95": 11.123986005259212,
+      "mean": 6.617906445171684
+    },
+    "search_ms": {
+      "p50": 3.5794239956885576,
+      "p95": 6.051889002264943,
+      "mean": 3.8746223322555626
+    }
+  },
+  "recall_at_k": {
+    "k": 5,
+    "mean": 1.0,
+    "per_query": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "llm_bench": null,
+  "disclaimer": "Scores reflect the SkilledDragon minilab harness on mem0ai OSS 2.2.1. They are not parity claims vs Meta Muse Wonder vendor benchmarks."
+}

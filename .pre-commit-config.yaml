@@ -1,0 +1,18 @@
+repos:
+  - repo: local
+    hooks:
+      - id: gitleaks
+        name: gitleaks
+        entry: gitleaks git --redact --exit-code 1
+        language: system
+        pass_filenames: false
+      - id: ruff-check
+        name: ruff check
+        entry: uv run ruff check src tests
+        language: system
+        pass_filenames: false
+      - id: ruff-format
+        name: ruff format check
+        entry: uv run ruff format --check src tests
+        language: system
+        pass_filenames: false

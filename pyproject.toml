@@ -1,0 +1,54 @@
+[project]
+name = "memory-bakeoff"
+version = "0.1.0"
+description = "SkilledDragon minilab: Mem0 open-source active memory bakeoff harness"
+readme = "README.md"
+authors = [{ name = "SkilledDragon LLC", email = "hello@skilleddragon.com" }]
+requires-python = ">=3.12"
+dependencies = [
+    "faiss-cpu>=1.15.1",
+    "fastembed>=0.4.2",
+    "mem0ai==2.2.1",
+    "ollama>=0.6.3",
+    "onnxruntime>=1.19.2,<1.20",
+    "qdrant-client>=1.19.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "ruff>=0.8.0",
+    "mypy>=1.13.0",
+    "pip-audit>=2.7.0",
+]
+
+[project.scripts]
+memory-bakeoff = "memory_bakeoff.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.12.17,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+package = true
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["memory_bakeoff"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "e2e: keyless end-to-end tests using real fastembed (may download models)",
+    "live_llm: requires OPENAI_API_KEY or GEMINI_API_KEY",
+]
