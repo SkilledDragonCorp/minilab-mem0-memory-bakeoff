@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Mem0 Memory Bakeoff Minilab",
+    "output": "architecture.html",
+    "quality_profile": "showcase",
+    "locale": "en"
+  },
+  "components": [
+    { "id": "agent", "type": "external", "label": "Agent Host", "sublabel": "Cursor / Claude Code", "pos": [40, 280], "size": [140, 64] },
+    { "id": "mcp", "type": "backend", "label": "MCP Server", "sublabel": "Bun + stdio", "pos": [260, 280], "size": [140, 64], "tag": "remember/recall/forget" },
+    { "id": "cli", "type": "backend", "label": "memory-bakeoff CLI", "sublabel": "uv run · Python 3.12", "pos": [460, 280], "size": [160, 64] },
+    { "id": "store", "type": "backend", "label": "MemoryStore", "sublabel": "mem0ai==2.2.1", "pos": [760, 280], "size": [150, 64] },
+    { "id": "embed", "type": "cloud", "label": "FastEmbed", "sublabel": "local MiniLM", "pos": [760, 120], "size": [150, 60] },
+    { "id": "faiss", "type": "database", "label": "FAISS", "sublabel": "vector store", "pos": [980, 280], "size": [130, 60] },
+    { "id": "bench", "type": "backend", "label": "Bench Harness", "sublabel": "persona corpus", "pos": [460, 440], "size": [160, 64] },
+    { "id": "scorecard", "type": "external", "label": "Scorecard", "sublabel": "reports/*.md+json", "pos": [760, 440], "size": [150, 64], "tag": "lab harness only" }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "Keyless CI path (MEM0_TELEMETRY=False)", "wraps": ["cli", "store", "embed", "faiss", "bench"] },
+    { "kind": "security-group", "label": "Agent surface", "wraps": ["agent", "mcp"] }
+  ],
+  "connections": [
+    { "id": "agent-mcp", "from": "agent", "to": "mcp", "label": "tools", "variant": "emphasis" },
+    { "id": "mcp-cli", "from": "mcp", "to": "cli", "label": "JSON argv" },
+    { "id": "cli-store", "from": "cli", "to": "store", "label": "CRUD" },
+    { "id": "store-embed", "from": "store", "to": "embed", "label": "embed", "fromSide": "top", "toSide": "bottom", "labelDy": -48 },
+    { "id": "store-faiss", "from": "store", "to": "faiss", "label": "vectors" },
+    { "id": "cli-bench", "from": "cli", "to": "bench", "label": "bench run", "variant": "dashed", "fromSide": "bottom", "toSide": "top", "labelDy": 52 },
+    { "id": "bench-score", "from": "bench", "to": "scorecard", "label": "write" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "Agent surface", "items": ["Bun MCP stdio tools", "Skills only under .claude/skills/"] },
+    { "dot": "emerald", "title": "Memory core", "items": ["Pinned mem0ai 2.2.1", "FastEmbed + FAISS keyless path", "Optional LLM bench when API keys set"] },
+    { "dot": "rose", "title": "Honesty hedges", "items": ["Scorecard labeled skilleddragon-lab-harness", "No Muse Wonder parity claims"] }
+  ]
+}
