@@ -4,7 +4,7 @@
 
 | Field | Value |
 | --- | --- |
-| Generated (UTC) | 2026-10-13T02:01:00.435695+00:00 |
+| Generated (UTC) | 2026-10-13T14:47:33.846451+00:00 |
 | mem0ai pin | `2.2.1` |
 | Harness label | `skilleddragon-lab-harness` |
 | Memories ingested | 9 |
@@ -15,8 +15,8 @@
 
 | Operation | p50 (ms) | p95 (ms) | mean (ms) |
 | --- | ---: | ---: | ---: |
-| add | 6.27 | 11.12 | 6.62 |
-| search | 3.58 | 6.05 | 3.87 |
+| add | 6.49 | 19.60 | 7.80 |
+| search | 3.38 | 9.61 | 3.98 |
 
 ## Recall@5 (fixture persona corpus)
 
