@@ -15,9 +15,10 @@ def test_fixture_loads():
 
 
 def test_bench_run_mock_store(tmp_path, monkeypatch):  # type: ignore[no-untyped-def]
-    import memory_bakeoff.config as cfg_module
     from mem0.embeddings.mock import MockEmbeddings
     from mem0.utils.factory import EmbedderFactory
+
+    import memory_bakeoff.config as cfg_module
 
     original = EmbedderFactory.create
 
