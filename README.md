@@ -14,7 +14,7 @@ SkilledDragon minilab proving **[mem0ai](https://github.com/mem0ai/mem0) 2.2.1**
 | MCP | Bun + TypeScript stdio server (`mcp/`) → spawns `uv run memory-bakeoff` with JSON argv |
 | Skills | `.claude/skills/mem0-remember-recall`, `mem0-scorecard` |
 
-Pin notes: [docs/MEM0_PIN.md](docs/MEM0_PIN.md). Upstream skill check recorded in [skills-lock.json](skills-lock.json).
+Pin notes: [docs/MEM0_PIN.md](docs/MEM0_PIN.md). Upstream skill check recorded in [skills-lock.json](skills-lock.json). Interactive system map: [docs/architecture.html](docs/architecture.html) (Archify).
 
 ## Setup
 
