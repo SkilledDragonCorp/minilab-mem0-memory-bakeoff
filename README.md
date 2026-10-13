@@ -106,7 +106,7 @@ LLM benchmark runs only when `OPENAI_API_KEY` or `GEMINI_API_KEY` is set; otherw
 
 ## Security
 
-See [SECURITY.md](SECURITY.md). Gitleaks + dependency audits run in CI.
+This is an educational minilab — not a product we keep on a maintenance schedule. Contact: **hello@skilleddragon.com**. See [SECURITY.md](SECURITY.md). Gitleaks + dependency audits still run in CI for hygiene.
 
 ---
 
